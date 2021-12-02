@@ -1,0 +1,23 @@
+<mat-toolbar fxLayout="row" color="warn">
+  <img src="../../../assets/logo.png" class="header-logo">
+  <span fxFlex>Velio</span>
+  <span class="menu-spacer"></span>
+  <div>
+    <a mat-button [routerLink]="['/home']">Home</a>
+    <a mat-button [routerLink]="['/register']">Register</a>
+    <a mat-button [routerLink]="['/login']">Login</a>
+    <a mat-button [routerLink]="['/create_bike']">Create a bike</a>
+    <a mat-button [routerLink]="['/bike']">Get a bike</a>
+    <a mat-button [routerLink]="['/create_park']">Create a park</a>
+    <a mat-button [routerLink]="['/park']">Choose a bike</a>
+    <a mat-button>Logout</a>
+
+    <!--
+    <a mat-button [routerLink]="['/home']">Home</a>
+    <a mat-button [routerLink]="['/register']"*ngIf="!_authService.loggedIn()">Register</a>
+    <a mat-button [routerLink]="['/login']" *ngIf="!_authService.loggedIn()">Login</a>
+    <a mat-button [routerLink]="['/news']" type="button" (click)="openDialog()">New</a>
+    <a mat-button *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a> -->
+
+  </div>
+</mat-toolbar>
