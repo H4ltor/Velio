@@ -19,7 +19,9 @@ import { CreateBikeComponent } from './Admin/Create/create-bike/create-bike.comp
 @NgModule({
   declarations: [AppComponent, HomeComponent,
     NavComponent, FooterComponent,
-    ListBikesComponent, ListParksComponent, CreateParkComponent, ShowParkComponent, ShowBikeComponent, CreateBikeComponent,
+    ListBikesComponent, ListParksComponent,
+    CreateParkComponent, ShowParkComponent,
+    ShowBikeComponent, CreateBikeComponent,
     ],
   imports: [
     BrowserModule,
