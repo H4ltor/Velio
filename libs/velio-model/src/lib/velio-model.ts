@@ -3,7 +3,6 @@ export function velioModel(): string {
 }
 export interface UserDto {
   userId: string;
-  username: string;
   email: string;
   password: string;
   firstName: string;

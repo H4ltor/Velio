@@ -1,4 +1,4 @@
-import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
+import {Body, Controller, Get, HttpCode, HttpStatus, Post} from '@nestjs/common';
 
 import { UserDto, usersResourcePath } from '@velio/velio-model';
 import { AuthService } from '../auth/auth.service';
@@ -11,9 +11,16 @@ export class UsersController {
     private authService: AuthService
   ) {}
 
-  @Get('')
+  @Post('signIn')
   @HttpCode(HttpStatus.OK)
-  findAll() {
-    return this.authService.findAll();
+  findByEmailAndPassword(@Body() user: UserDto) {
+    console.log(user);
+    return this.authService.signIn(user);
+  }
+
+  @Post('signUp')
+  @HttpCode(HttpStatus.OK)
+  findAll(@Body()user:UserDto) {
+    return this.authService.signUp(user);
   }
 }
