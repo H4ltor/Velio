@@ -12,9 +12,9 @@
     <a mat-button [routerLink]="['main']">New</a>
     <a mat-button [routerLink]="['bike']">Get a bike</a>
     <a mat-button [routerLink]="['park']">Choose a park</a>
-    <a mat-button [routerLink]="['register']">Register</a>
-    <a mat-button [routerLink]="['login']">Login</a>
-    <a mat-button>Logout</a>
+    <a mat-button [routerLink]="['register']" *ngIf="!authService.loggedIn()">Register>Register</a>
+    <a mat-button [routerLink]="['login']" *ngIf="!authService.loggedIn()">Login>Login</a>
+    <a mat-button *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>
 
     <!--
     <a mat-button [routerLink]="['/home']">Home</a>
