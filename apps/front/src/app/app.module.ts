@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { VelioRoutingModule } from './velio-routing.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './Components/public/home/home.component';
+import { MainComponent } from './Components/public/main/main.component';
 import { NavComponent } from './Components/public/nav/nav.component';
 import { FooterComponent } from './Components/public/footer/footer.component';
 import { ListBikesComponent } from './Components/Manager/list-bikes/list-bikes.component';
@@ -15,14 +15,19 @@ import { ShowParkComponent } from './Components/Admin/Show/show-park/show-park.c
 import { ShowBikeComponent } from './Components/Admin/Show/show-bike/show-bike.component';
 import { CreateBikeComponent } from './Components/Admin/Create/create-bike/create-bike.component';
 import { MaterialModule } from './_shared/material/material.module';
+import { RegisterComponent } from './Components/Connection/register/register.component';
+import { LoginComponent } from './Components/Connection/login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './Components/public/home/home.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent,
+  declarations: [AppComponent, MainComponent,
     NavComponent, FooterComponent,
     ListBikesComponent, ListParksComponent,
     CreateParkComponent, ShowParkComponent,
-    ShowBikeComponent, CreateBikeComponent,
+    ShowBikeComponent, CreateBikeComponent, RegisterComponent, LoginComponent, HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,8 @@ import { MaterialModule } from './_shared/material/material.module';
     NoopAnimationsModule,
     VelioRoutingModule,
     MaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

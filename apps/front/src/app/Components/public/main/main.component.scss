@@ -1,0 +1,21 @@
+
+.container-2 {
+
+  padding: 30px;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  max-width: 400px;
+}
+
+.header-image {
+  background-image: url('~/src/assets/bike.jpg');
+  background-size: cover;
+}
