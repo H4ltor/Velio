@@ -20,6 +20,8 @@ import { LoginComponent } from './Components/Connection/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './Components/public/home/home.component';
+import { MapComponent } from './Components/public/map/map.component';
+
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { HomeComponent } from './Components/public/home/home.component';
     NavComponent, FooterComponent,
     ListBikesComponent, ListParksComponent,
     CreateParkComponent, ShowParkComponent,
-    ShowBikeComponent, CreateBikeComponent, RegisterComponent, LoginComponent, HomeComponent,
+    ShowBikeComponent, CreateBikeComponent, RegisterComponent, LoginComponent, HomeComponent, MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,7 @@ import { HomeComponent } from './Components/public/home/home.component';
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

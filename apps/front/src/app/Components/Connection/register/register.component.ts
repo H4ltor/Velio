@@ -31,6 +31,7 @@ export class RegisterComponent {
     const form = this.formSignUp.value;
 
     this.auth.signUp(form).subscribe((data) => {
+      console.log(data)
     });
   }
 }

@@ -3,7 +3,7 @@
   <span fxFlex>Velio</span>
   <span class="menu-spacer"></span>
   <div>
-    <a mat-button [routerLink]="['home']">Home</a>
+    <a mat-button [routerLink]="['']">Home</a>
     <button mat-button [matMenuTriggerFor]="menu">Create</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item [routerLink]="['create-bike']">Create a bike</button>
@@ -11,10 +11,10 @@
     </mat-menu>
     <a mat-button [routerLink]="['main']">New</a>
     <a mat-button [routerLink]="['bike']">Get a bike</a>
-    <a mat-button [routerLink]="['park']">Choose a park</a>
-    <a mat-button [routerLink]="['register']" *ngIf="!authService.loggedIn()">Register>Register</a>
-    <a mat-button [routerLink]="['login']" *ngIf="!authService.loggedIn()">Login>Login</a>
-    <a mat-button *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>
+    <a mat-button [routerLink]="['map']">Choose a park</a>
+    <a mat-button [routerLink]="['register']" *ngIf="!authService.loggedIn()">Register</a>
+    <a mat-button [routerLink]="['login']" *ngIf="!authService.loggedIn()">Login</a>
+    <a mat-button [routerLink]="['']" (click)="authService.logoutUser()">Logout</a>
 
     <!--
     <a mat-button [routerLink]="['/home']">Home</a>

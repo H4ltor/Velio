@@ -1,0 +1,17 @@
+.map-wrapper {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  margin: 20px;
+}
+
+.map-border {
+  border: 5px solid coral;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+}

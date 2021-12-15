@@ -26,7 +26,7 @@ export class LoginComponent {
     // Get infos from
     const form = this.formSignIn.value;
 
-    // Sign-up
+    // Sign-in
     this.auth.signIn(form).subscribe((data) => {
       console.log(data);
     });

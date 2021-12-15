@@ -9,6 +9,7 @@ import { CreateParkComponent } from './Components/Admin/Create/create-park/creat
 import {RegisterComponent} from "./Components/Connection/register/register.component";
 import {LoginComponent} from "./Components/Connection/login/login.component";
 import {HomeComponent} from "./Components/public/home/home.component";
+import {MapComponent} from "./Components/public/map/map.component";
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'list-parks', component: ListParksComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'map', component: MapComponent},
 ];
 @NgModule({
   declarations: [],

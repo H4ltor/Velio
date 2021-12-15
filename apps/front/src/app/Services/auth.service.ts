@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {UserDto, usersResourcePath} from "@velio/velio-model";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   signIn(user: UserDto) {
     return this.http.post(`api/users/signIn`, user);
@@ -21,8 +24,8 @@ export class AuthService {
   }
 
   logoutUser() {
-    localStorage.removeItem('token')
-    //this.router.navigate(['/login'])
+    localStorage.removeItem('password')
+    return this.http.get(`api/users/signIn`)
   }
 
 }

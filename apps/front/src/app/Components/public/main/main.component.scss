@@ -1,3 +1,7 @@
+body {
+  background-color: #886804;
+}
+
 
 .container-2 {
 
@@ -10,12 +14,15 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-
+mat-card-subtitle {
+  color: #865701;
+}
 .card {
+  background-color: #2a2a2a;
   max-width: 400px;
+  color: #865701;
 }
 
 .header-image {
-  background-image: url('~/src/assets/bike.jpg');
   background-size: cover;
 }
