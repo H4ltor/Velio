@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class AuthService {
+  httpClient: any;
 
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -24,8 +25,9 @@ export class AuthService {
   }
 
   logoutUser() {
-    localStorage.removeItem('password')
-    return this.http.get(`api/users/signIn`)
+   // localStorage.removeItem('password')
+    //return this.http.get(`api/users/signIn`)
+    this.http.delete(`api/users/signUp`);
   }
 
 }
