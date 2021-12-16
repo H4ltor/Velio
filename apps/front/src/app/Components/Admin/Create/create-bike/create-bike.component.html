@@ -1,1 +1,12 @@
-<p>create-bike works!</p>
+<div class='container'>
+  <mat-form-field>
+    <input matInput placeholder='Name' name='name' [(ngmodel)]='this.bike.model'>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder='City' name='city' [(ngmodel)]='this.bike.number'>
+  </mat-form-field>
+  <button mat-flat-button-color='primary' (click)='onSaveForm()'>
+    <mat-icon>save</mat-icon>Save
+  </button>
+</div>
+

@@ -1,1 +1,14 @@
-<p>create-park works!</p>
+<div class='container'>
+  <mat-form-field>
+    <input matInput placeholder='Name' name='name' [(ngmodel)]='this.park.name'>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder='City' name='city' [(ngmodel)]='this.park.city'>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder='PostalCode' name='postalCode' [(ngmodel)]='this.park.postalCode'>
+  </mat-form-field>
+  <button mat-flat-button-color='primary' (click)='onSaveForm()'>
+    <mat-icon>save</mat-icon>Save
+  </button>
+</div>

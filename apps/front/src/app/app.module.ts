@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { VelioRoutingModule } from './velio-routing.module';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MainComponent } from './Components/public/main/main.component';
 import { NavComponent } from './Components/public/nav/nav.component';
 import { FooterComponent } from './Components/public/footer/footer.component';
@@ -20,8 +21,15 @@ import { LoginComponent } from './Components/Connection/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './Components/public/home/home.component';
+import { MatTableModule } from '@angular/material/table';
+import { ParksService} from './Services/parks.service';
+import { BikesService} from './Services/bikes.service';
+//firebase
+import { environment} from '../environments/environment';
+import { AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 
-
+import { FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [AppComponent, MainComponent,
     NavComponent, FooterComponent,
@@ -32,13 +40,18 @@ import { HomeComponent } from './Components/public/home/home.component';
   imports: [
     BrowserModule,
     RouterModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     VelioRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTableModule,
+    AngularFireModule.initializeApp(environment.configFirebase),
+    AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [ParksService,
+              BikesService],
   bootstrap: [AppComponent],
+  entryComponents: [CreateParkComponent],
 })
 export class AppModule {}
