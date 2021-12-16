@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   logoutUser() {
-   // localStorage.removeItem('password')
+    localStorage.removeItem(`api/users/signUp`)
     //return this.http.get(`api/users/signIn`)
     this.http.delete(`api/users/signUp`);
   }
