@@ -24,12 +24,13 @@ import { HomeComponent } from './Components/public/home/home.component';
 import { MatTableModule } from '@angular/material/table';
 import { ParksService} from './Services/parks.service';
 import { BikesService} from './Services/bikes.service';
+import { FormsModule } from '@angular/forms';
 //firebase
 import { environment} from '../environments/environment';
 import { AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 
-import { FormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [AppComponent, MainComponent,
     NavComponent, FooterComponent,
@@ -43,6 +44,7 @@ import { FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     VelioRoutingModule,
     MaterialModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,

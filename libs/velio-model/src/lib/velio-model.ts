@@ -12,20 +12,24 @@ export interface UserDto {
 export interface ParkDto {
   id: string;
   name: string;
-}
-export interface StationDto {
-  id: string;
-  name: string;
-  parks: number;
+  city: string;
+  postalCode: number;
 }
 export interface BikeDto {
   id: string;
-  name: string;
-  station: number;
-  parks: number;
+  model: string;
+  number: number;
 }
-export const parksResourcePath = 'parks';
-export const bikesResourcePath = 'bikes';
+/*export interface StationDto {
+  id: string;
+  name: string;
+  parks: number;
+}*/
+
+export const parksResourcePath = 'create-parks';
+export const bikesResourcePath = 'create-bikes';
+export const listParksResourcePath = 'list-parks';
+export const listBikeResourcePath = 'list-bikes';
 export const stationsResourcePath = 'stations';
 export const usersResourcePath = 'users';
 export const prefixePath = 'api';

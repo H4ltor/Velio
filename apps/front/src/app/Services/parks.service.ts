@@ -2,21 +2,23 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
 import { Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ParkI} from '../models/park.interface';
-
-export interface ParkID extends ParkI { id: string; }
+//import { ParkI} from '../models/park.interface';
+import {ParkDto, parksResourcePath, listParksResourcePath} from '@velio/velio-model';
+import { HttpClient } from '@angular/common/http';
+export interface ParkID extends ParkDto { id: string; }
 @Injectable({
   providedIn: 'root'
 })
 export class ParksService {
-  private parkCollection: AngularFirestoreCollection<ParkI>;
-  parks: Observable<ParkI[]>;
+  private parkCollection: AngularFirestoreCollection<ParkDto>;
+  parks: Observable<ParkDto[]>;
+  selected: any;
 
-  constructor(private readonly afs:AngularFirestore) {
-    this.parkCollection = afs.collection<ParkI>('parks');
+  constructor(private readonly afs:AngularFirestore, private http: HttpClient) {
+    this.parkCollection = afs.collection<ParkDto>('parks');
     this.parks = this.parkCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as ParkI;
+        const data = a.payload.doc.data() as ParkDto;
         const id = a.payload.doc.id;
         return { id, ...data};
 
@@ -29,7 +31,7 @@ export class ParksService {
     return this.parks;
   }
 
-  editPark(park: ParkI) {
+  editPark(park: ParkDto) {
     //let id:  string = '';
     return this.parkCollection.doc(park.id).update(park);
     /*
@@ -59,10 +61,13 @@ export class ParksService {
   }
 
   deletePark(id: string) {
-    return this.parkCollection.doc(id).delete();
+    console.log(id);
+    return this.http.delete(`api/park/deletePark/${id}`);
+    //return this.parkCollection.doc(id).delete();
   }
 
-  addPark(park: ParkI) {
-      return this.parkCollection.add(park);
+  addPark(park: ParkDto) {
+    return this.http.post('/api/park/addPark', park);
+      //return this.parkCollection.add(park);
   }
 }

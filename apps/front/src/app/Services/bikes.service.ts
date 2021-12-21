@@ -2,21 +2,23 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
 import { Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
-import {BikeI} from '../models/bike.interface';
+//import {BikeI} from '../models/bike.interface';
+import {BikeDto} from '@velio/velio-model';
 
-export interface BikeID extends BikeI { id: string;}
+export interface BikeID extends BikeDto { id: string;}
 @Injectable({
   providedIn: 'root'
 })
 export class BikesService {
-  private bikeCollection: AngularFirestoreCollection<BikeI>;
-  bikes: Observable<BikeI[]>;
+  private bikeCollection: AngularFirestoreCollection<BikeDto>;
+  bikes: Observable<BikeDto[]>;
+  selected: any;
 
   constructor(private readonly afs:AngularFirestore) {
-    this.bikeCollection = afs.collection<BikeI>('bikes');
+    this.bikeCollection = afs.collection<BikeDto>('bikes');
     this.bikes = this.bikeCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as BikeI;
+        const data = a.payload.doc.data() as BikeDto;
         const id = a.payload.doc.id;
         return { id, ...data};
       }))
@@ -28,7 +30,7 @@ export class BikesService {
     return this.bikes;
   }
 
-  editBikes(bikes: BikeI) {
+  editBikes(bikes: BikeDto) {
     //let id:  string = '';
     return this.bikeCollection.doc(bikes.id).update(bikes);
 
@@ -38,7 +40,7 @@ export class BikesService {
     return this.bikeCollection.doc(id).delete();
   }
 
-  addBike(bike: BikeI) {
+  addBike(bike: BikeDto) {
     return this.bikeCollection.add(bike);
   }
 }

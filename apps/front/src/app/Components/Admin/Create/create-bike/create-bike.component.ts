@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { BikesService} from '../../../../Services/bikes.service';
 import {BikeI} from '../../../../models/bike.interface';
 import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
