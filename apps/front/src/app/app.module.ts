@@ -24,7 +24,8 @@ import { HomeComponent } from './Components/public/home/home.component';
 import { MatTableModule } from '@angular/material/table';
 import { ParksService} from './Services/parks.service';
 import { BikesService} from './Services/bikes.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 //firebase
 import { environment} from '../environments/environment';
 import { AngularFirestoreModule} from '@angular/fire/compat/firestore';

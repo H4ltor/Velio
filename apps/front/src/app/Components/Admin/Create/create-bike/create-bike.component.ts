@@ -9,12 +9,15 @@ import {BikeI} from '../../../../models/bike.interface';
 })
 export class CreateBikeComponent {
 
-  bike: BikeI;
+  bike: BikeDto;
+
+  bikeModel: string;
+  bikeNumber: number;
 
   constructor(public bikeService: BikesService) { }
 
   onSaveForm(): void {
-    if (this.bike.id === null) {
+   /* if (this.bike.id === null) {
       const newBike = {
         id: this.bike.id,
         model: this.bike.model,
@@ -23,7 +26,14 @@ export class CreateBikeComponent {
       this.bikeService.addBike(newBike);
     } else {
       this.bikeService.editBikes(this.bike);
+    }*/
+
+    const newBike = {
+      id: 'ma bite',
+      model: this.bikeModel,
+      number: this.bikeNumber,
     }
+    this.bikeService.addBike(newBike);
     this.close();
   }
 
