@@ -12,11 +12,7 @@ export class CreateParkComponent {
 
   park: ParkI;
 
-  constructor(public parkService: ParksService,
-              private dialogRef: MatDialogRef<CreateParkComponent>
-             /* @Inject(MAT_DIALOG_DATA) data */) { }
-
-
+  constructor(public parkService: ParksService) { }
 
   onSaveForm(): void {
     if (this.park.id === null) {

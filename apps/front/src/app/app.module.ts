@@ -53,7 +53,7 @@ import { AngularFireModule } from '@angular/fire/compat';
   ],
   providers: [ParksService,
               BikesService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent,],
   entryComponents: [CreateParkComponent],
 })
 export class AppModule {}
