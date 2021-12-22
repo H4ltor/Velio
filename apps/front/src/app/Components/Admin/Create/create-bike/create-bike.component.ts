@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { BikesService} from '../../../../Services/bikes.service';
 import {BikeI} from '../../../../models/bike.interface';
-import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'velio-create-bike',
@@ -12,8 +11,7 @@ export class CreateBikeComponent {
 
   bike: BikeI;
 
-  constructor(public bikeService: BikesService,
-              private  dialogRef: MatDialogRef<CreateBikeComponent>) { }
+  constructor(public bikeService: BikesService) { }
 
   onSaveForm(): void {
     if (this.bike.id === null) {
@@ -30,7 +28,7 @@ export class CreateBikeComponent {
   }
 
   close(): void {
-    this.dialogRef.close();
+    // this.dialogRef.close();
   }
 
 }

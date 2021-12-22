@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ParksService} from '../../../../Services/parks.service';
 import {ParkI} from '../../../../models/park.interface';
-import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'velio-create-park',
@@ -30,6 +29,6 @@ export class CreateParkComponent {
   }
 
   close(): void {
-    this.dialogRef.close();
+   // this.dialogRef.close();
   }
 }
