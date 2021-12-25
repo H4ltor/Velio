@@ -9,15 +9,20 @@ import { CreateParkComponent } from './Components/Admin/Create/create-park/creat
 import {RegisterComponent} from "./Components/Connection/register/register.component";
 import {LoginComponent} from "./Components/Connection/login/login.component";
 import {HomeComponent} from "./Components/public/home/home.component";
+import { ProfileService } from './Services/profile.service';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'main', component: MainComponent},
-  {path: 'create-bikes', component: CreateBikeComponent},
-  {path: 'create-parks', component: CreateParkComponent},
-  {path: 'list-bikes', component: ListBikesComponent},
-  {path: 'list-parks', component: ListParksComponent},
+  {path: 'create-bikes', component: CreateBikeComponent,
+    canActivate:[ProfileService]},
+  {path: 'create-parks', component: CreateParkComponent,
+    canActivate:[ProfileService]},
+  {path: 'list-bikes', component: ListBikesComponent,
+    canActivate:[ProfileService]},
+  {path: 'list-parks', component: ListParksComponent,
+    canActivate:[ProfileService]},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
 ];
