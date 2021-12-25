@@ -11,7 +11,6 @@ export interface BikeID extends BikeDto { id: string;}
   providedIn: 'root'
 })
 export class BikesService {
-  private bikeCollection: AngularFirestoreCollection<BikeDto>;
   bikes: Observable<BikeDto[]>;
   selected: any;
 

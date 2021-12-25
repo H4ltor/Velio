@@ -1,6 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 import { BikesService} from '../../../../Services/bikes.service';
-import {BikeI} from '../../../../models/bike.interface';
+import { BikeDto } from '@velio/velio-model';
 
 @Component({
   selector: 'velio-create-bike',
@@ -20,8 +20,8 @@ export class CreateBikeComponent {
    /* if (this.bike.id === null) {
       const newBike = {
         id: this.bike.id,
-        model: this.bike.model,
-        number: this.bike.number,
+        model: this.bikeModel,
+        number: this.bikeNumber,
       }
       this.bikeService.addBike(newBike);
     } else {

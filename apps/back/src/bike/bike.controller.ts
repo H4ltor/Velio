@@ -1,5 +1,6 @@
-import { Controller, Body, HttpStatus, HttpCode, Post, Put, Delete } from '@nestjs/common';
+import { Controller, Body, HttpStatus, HttpCode, Post, Put, Delete, Get } from '@nestjs/common';
 import {BikeService} from './bike.service';
+import { BikeDto, UserDto } from '@velio/velio-model';
 
 @Controller('bike')
 export class BikeController {
@@ -8,9 +9,9 @@ export class BikeController {
 
   }
 
-  @Post('bike/addBike')
+  @Post('addBike')
   @HttpCode(HttpStatus.OK)
-  create(@Body() bike) {
+  create(@Body() bike: BikeDto) {
     console.log(bike);
     return this.bikeService.addBike(bike);
   }
@@ -26,5 +27,4 @@ export class BikeController {
   edit(@Body() id, bike) {
     return this.bikeService.editBike(id, bike);
   }
-
 }

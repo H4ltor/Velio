@@ -18,7 +18,6 @@ import { CreateBikeComponent } from './Components/Admin/Create/create-bike/creat
 import { MaterialModule } from './_shared/material/material.module';
 import { RegisterComponent } from './Components/Connection/register/register.component';
 import { LoginComponent } from './Components/Connection/login/login.component';
-import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './Components/public/home/home.component';
 import { MatTableModule } from '@angular/material/table';

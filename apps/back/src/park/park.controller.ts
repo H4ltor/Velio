@@ -29,8 +29,4 @@ export class ParkController {
     return this.parkService.editPark(id, park);
   }
   //@Patch('park/editPark')
-
-
-
-
 }
